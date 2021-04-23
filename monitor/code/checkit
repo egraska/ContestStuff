@@ -1,0 +1,12 @@
+#!/bin/bash
+while [ 1 == 1 ];
+do
+	 LINE=`pstree -paul | grep monitor | grep -v grep | awk '{ print $1 }'`
+	 echo $LINE
+	if [ -z $LINE ]; then
+		echo NONE
+	else 
+		echo SOME
+	fi
+	sleep 1
+done

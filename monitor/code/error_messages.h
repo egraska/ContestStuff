@@ -1,0 +1,83 @@
+#ifndef ERROR_MESSAGES_H
+#define ERROR_MESSAGES_H
+
+#define COMMAND_NOT_FOUND                       "Command %s, was not found"
+#define REQUIRE_COMMAND_NOT_FOUND               "Command %s, was not expected in this context"
+#define EXCESSIVE_FAILURES                      "Excessive command failures...Disconnecting..."
+#define INVALID_IDENT_FORMAT                    "Command IDENT requires one or two arguments, <IDENTITY> (<DH_EXCHANGE_KEY>)"
+#define INVALID_DH_KEY_FORMAT                   "Invalid Diffie-Helman Key: Key must be base 32 formatted string"
+#define INVALID_RSA_KEY_FORMAT                  "Invalid RSA Key: Key must be base 32 formatted string"
+#define INVALID_ROUNDS_FORMAT                   "Command ROUNDS: requires a base 32 value greater that 0 and less than or equal to 30"
+#define INVALID_CHALLENGE_FORMAT                "Command CHALLENGE: requires a base 32 value"
+#define INVALID_PASSWORD_FORMAT                 "Command PASSWORD requires one argument, <PASSWORD>"
+#define INVALID_ALIVE_FORMAT                    "Command ALIVE requires one argument, <COOKIE>"
+#define INVALID_CHANGE_PASSWORD_FORMAT          "Command CHANGE_PASSWORD requires two arguments, <OLD_PASSWORD> <NEW_PASSWORD>"
+#define INVALID_HOST_PORT_FORMAT                "Command HOST_PORT requires two arguments, <HOST> <PORT>"
+#define INVALID_PORT_FORMAT                     "Argument PORT in Command HOST_PORT must be a decimal number"
+#define INVALID_PORT_RANGE                      "Argument PORT in Command HOST_PORT must be between %d and %d"
+#define INVALID_PLAYER_STATUS_CRACK_FORMAT      "Command PLAYER_STATUS_CRACK requires two arguments, <PLAYER_NAME> <COMPUTERS>"
+#define INVALID_PLAYER_PASSWORD_CRACK_FORMAT    "Command PLAYER_PASSWORD_CRACK requires two arguments, <PLAYER_NAME> <COMPUTERS>"
+#define INVALID_PLAYER_HOST_PORT_FORMAT         "Command PLAYER_HOST_PORT requires one arguments, <PLAYER_NAME>"
+#define INVALID_SYNTHESIZE_FORMAT_POW           "Command SYNTHESIZE requires three arguments, <FINISHED_PRODUCT_NAME> <AMOUNT> <PROOF_OF_WORK>"
+#define INVALID_SYNTHESIZE_FORMAT_POW_EITHER    "Command SYNTHESIZE requires one or three arguments, <FINISHED_PRODUCT_NAME> (<AMOUNT> <PROOF_OF_WORK>)"
+#define INVALID_SYNTHESIZE_FORMAT               "Command SYNTHESIZE requires one argument, <FINISHED_PRODUCT_NAME>"
+#define INVALID_TRADE_RESPONSE                  "Command TRADE_RESPONSE requires one argument, <ACCEPT/DECLINE>"
+#define INVALID_TRUCE_RESPONSE                  "Command WAR_TRUCE_RESPONSE requires one argument, <ACCEPT/DECLINE>"
+#define INVALID_MAKE_CERTIFICATE_FORMAT         "Command MAKE_CERTIFICATE requires two arguments, <EXPONENT> <MODULUS>"
+#define INVALID_GET_CERTIFICATE_FORMAT          "Command GET_CERTIFICATE requires one argument, <PLAYER_NAME>"
+#define INVALID_TRADE_FORMAT                    "Command TRADE requires at least 5 parameters: <PLAYER_NAME> [ASSET_NAME_N ASSET_AMOUNT_N] FOR <PLAYER_NAME> [ASSET_NAME_N ASSET_AMOUNT_N]"
+#define INVALID_WAR_TRUCE_FORMAT                "Command WAR_TRUCE requires at least 4 parameters: <PLAYER_NAME> [ASSET_NAME_N ASSET_AMOUNT_N] FOR <PLAYER_NAME>"
+#define INVALID_PUBLIC_KEY_FORMAT               "Command PUBLIC_KEY requires two arguments, <EXPONENT> <MODULUS>"
+#define INVALID_AUTHORIZE_SET_FORMAT            "Command AUTHORIZE_SET requires %d base 32 values"
+#define INVALID_CHALLENGE_RESPONSE_FORMAT       "Command CHALLENGE_RESPONSE requires %d base 32 values"
+#define INVALID_WAR_DECLARE_FORMAT              "Command WAR_DECLARE requires 5 parameters, <PLAYER_NAME> <PLAYER_HOST> <PLAYER_PORT> <NUMBER_VEHICLES> <NUMBER_WEAPONS>"
+#define INVALID_WAR_DEFEND_FORMAT               "Command WAR_DEFEND requires 2 parameters, <NUMBER_VEHICLES> <NUMBER_WEAPONS>"
+#define INVALID_WAR_STATUS_FORMAT               "Command WAR_STATUS requires 1 parameter, <PLAYER_NAME>"
+#define INVALID_SUBSET_A_FORMAT                 "Command SUBSET_A requires upto %d base 32 values"
+#define INVALID_SUBSET_K_FORMAT                 "Command SUBSET_K requires upto %d base 32 values"
+#define INVALID_SUBSET_J_FORMAT                 "Command SUBSET_J requires upto %d base 32 values"
+
+#define UNEXPECTED_ARGUMENTS_ERROR_FORMAT       "Command %s was provided unexpected arguments"
+#define TOO_SOON_TO_RECEIVE_RANDOM_HOST_PORT    "Too soon to receive host and port of a random player. Try again later"
+#define PROOF_OF_WORK_VERIFICATION_FAILED       "Failed to verify proof of work"
+
+#define COULD_NOT_CONNECT_TO_SERVER             "Unable to connect to host %s on port %s"
+#define COULD_NOT_VALIDATE_SERVER               "Unable to verify server alive at %s on port %s"
+
+#define ALIVE_FAULT                             "Invalid monitor password"
+#define INVALID_PASSWORD                        "Invalid password"
+#define INVALID_PLAYER_NAME                     "Player %s does not exist"
+#define INVALID_RESOURCE_NAME                   "Asset %s does not exist"
+#define RESOURCE_CANNOT_BE_SYNTHESIZED          "Asset %s cannot be synthesized"
+
+#define CRACK_UNSUCCESSFUL                      "Unsuccessful"
+#define INSUFFICIENT_COMPUTERS                  "Insufficient computers"
+#define INSUFFICIENT_RESOURCES                  "Insufficient raw materials to synthesize %s"
+#define RESOURCE_AMOUNT_NOT_A_NUMBER            "The asset amount should be a positive number"
+
+#define TRADE_NOT_SELF_IDENTITY                 "First argument of TRADE must be the connected players identity"
+#define TRUCE_NOT_SELF_IDENTITY                 "First argument of TRUCE must be the connected players identity"
+#define OTHER_PLAYER_DOES_NOT_EXIST             "Player %s does not exist"
+#define OFFER_INSUFFICIENT_RESOURCES            "Insufficient assets to offer"
+
+#define HOST_PORT_NOT_REGISTERED                "Player is not connected"
+#define PLAYERS_NOT_CONNECTED                   "No other players are currently connected"
+#define NO_CERTIFICATE_REGISTERED               "Player does not have a certificate registered"
+
+#define INVALID_NUMBER_OF_WEAPONS               "<NUMBER_WEAPONS> must be a base 10 value greater than 0"
+#define INVALID_NUMBER_OF_VEHICLES              "<NUMBER_VEHICLES> must be a base 10 value greater than 0"
+#define INSUFFICIENT_RESOURCES_WAR              "Insufficient assets to use in war"
+
+#define WAR_ALREADY_EXISTS                      "Unable to declare war while a current war is active between the same identities"
+#define CANNOT_FIGHT_SELF                       "Unable to declare war against yourself"
+#define WAR_COULD_NOT_FIND_OPPONENT             "Player %s does not live at %s:%s"
+#define WAR_OPPONENT_NOT_ONLINE                 "Player %s is not online. Try again later"
+#define WAR_DOES_NOT_EXIST                      "War has never occured between %s and %s"
+#define NO_ACTIVE_WARS_WITH_PLAYER              "No active war with player %s"
+
+#define RESERVED_IDENT                          "Ident %s cannot be used. Please choose a different ident"
+#define PLAYER_NOT_FOUND                        "New profile %s cannot be created. Please use existing ident"
+
+#define FATAL_ERROR                             "Memory could not be allocated dynamically"
+
+#endif

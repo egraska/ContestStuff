@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ -e player.pid ]; then
+	kill `cat player.pid`
+	rm -f player.pid
+fi

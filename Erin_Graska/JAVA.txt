@@ -1,0 +1,6 @@
+Note: the host on which this player is run must have java installed and
+visible. The Configurator and Client code was compiled with OpenJDK 10.
+If this is not compatible with the version of java on the host running
+the Configurator and/or Client java application then recompile by
+entering the ../src directory and executing 'make'.  This holds for
+both the Configurator and the Client.

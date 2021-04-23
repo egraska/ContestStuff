@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ -e monitor.pid ]; then
+   sudo kill `cat monitor.pid`
+   rm -f monitor.pid
+fi
+killall update-score
+rm -f code/*.o
+rm -f code/cbor.o
+rm -f code/commands/*.o
+rm -f code/monitor
